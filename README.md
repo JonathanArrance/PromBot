@@ -80,6 +80,11 @@ helm install robusta robusta/robusta -f ./generated_values.yaml --set clusterNam
 ## Sources
 
 [Robusta Docs](https://docs.robusta.dev/master/)
+
+[Robusta ChatGPT Bot](https://github.com/robusta-dev/kubernetes-chatgpt-bot/tree/main)
+
 [Helm](https://helm.sh)
+
 [Minikube](https://minikube.sigs.k8s.io/docs/)
+
 [Brew](https://brew.sh)
