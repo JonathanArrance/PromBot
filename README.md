@@ -77,6 +77,10 @@ helm repo add robusta https://robusta-charts.storage.googleapis.com && helm repo
 helm install robusta robusta/robusta -f ./generated_values.yaml --set clusterName=PromBot
 ```
 
+## Add the OenAI Plugin AKA ChatGPT
+
+
+
 ## Sources
 
 [Robusta Docs](https://docs.robusta.dev/master/)
