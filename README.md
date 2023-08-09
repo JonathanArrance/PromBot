@@ -123,7 +123,7 @@ Instead of waiting around for a Prometheus alert, lets cause one.
 1. Deploy a broken pod that will be stuck in pending state:
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/robusta-dev/kubernetes-demos/main/pending_pods/pending_pod.yaml
+kubectl apply -f https://gist.githubusercontent.com/robusta-lab/283609047306dc1f05cf59806ade30b6/raw
 ```
 
 2. Trigger a Prometheus alert immediately, skipping the normal delays:
@@ -140,12 +140,14 @@ An alert will arrive in Slack with a button. Click the button to ask ChatGPT abo
 When you want to remove Robusta from your cluster.
 
 ```bash
-helm uninstall robusta robusta/robusta 
+helm uninstall robusta robusta/robusta
 ```
 
 ## Sources
 
 [Robusta Docs](https://docs.robusta.dev/master/)
+
+[Robusta Source](https://github.com/robusta-dev/robusta)
 
 [Robusta ChatGPT Bot](https://github.com/robusta-dev/kubernetes-chatgpt-bot/tree/main)
 
