@@ -53,11 +53,12 @@ brew install helm
 
 ## Set up Robusta
 
-The Robusta install is all Helm based. Robusta can be used in an environment where Prometheus is alread in use, or Prometheus can be deployed with Robusta.
+The Robusta install is all Helm based. Robusta can be used in an environment where Prometheus is already in use, or Prometheus can be deployed with Robusta.
 
 NOTE: This demo uses Robusta to install Prometheus.
 
 Install the Python based Robusta CLI.
+
 ```bash
 pip install -U robusta-cli --no-cache
 ```
@@ -70,16 +71,15 @@ robusta gen-config --enable-prometheus-stack
 
 Set up the Helm chart and deploy Robusta in your Minikube environment.
 
-
 ```bash
 helm repo add robusta https://robusta-charts.storage.googleapis.com && helm repo update
 
 helm install robusta robusta/robusta -f ./generated_values.yaml --set clusterName=PromBot
 ```
 
-## Add the OenAI Plugin AKA ChatGPT
+## Add the OpenAI Plugin AKA ChatGPT
 
-# Robusta ChatGPT integration
+### Robusta ChatGPT integration
 
 Please view the original code and setup instructions here:
 
@@ -89,6 +89,7 @@ This code has several mods to the LLM prompts that will help give actual Kuberne
 
 ### Prerequisites
 * A Slack workspace
+* Working Kubernetes cluster
 
 ### Setup
 1. [Install Robusta with Helm](https://docs.robusta.dev/master/installation.html)
