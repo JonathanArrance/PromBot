@@ -93,7 +93,8 @@ This code has several mods to the LLM prompts that will help give actual Kuberne
 ### Setup
 1. [Install Robusta with Helm](https://docs.robusta.dev/master/installation.html)
 2. Load the ChatGPT playbook. Add the following to `generated_values.yaml`: 
-```
+
+```bash
 playbookRepos:
   chatgpt_robusta_actions:
     url: "https://github.com/JonathanArrance/PromBot.git"
@@ -108,7 +109,7 @@ customPlaybooks:
 
 3. Add your [OpenAI API key](https://beta.openai.com/account/api-keys) to `generated_values.yaml`. Make sure you edit the existing `globalConfig` section, don't add a duplicate section.
 
-```
+```bash
 globalConfig:
   chat_gpt_token: YOUR KEY GOES HERE
 ```
@@ -122,18 +123,23 @@ Instead of waiting around for a Prometheus alert, lets cause one.
 
 1. Deploy a broken pod that will be stuck in pending state:
 
-```
+```bash
 kubectl apply -f https://gist.githubusercontent.com/robusta-lab/283609047306dc1f05cf59806ade30b6/raw
 ```
 
 2. Trigger a Prometheus alert immediately, skipping the normal delays:
 
-```
+```bash
 robusta playbooks trigger prometheus_alert alert_name=KubePodCrashLooping namespace=default pod_name=example-pod
 ```
 
 An alert will arrive in Slack with a button. Click the button to ask ChatGPT about the alert.
 
+3. Cleanup the crash pod
+
+```bash
+kubectl delete deployment crashpod
+```
 
 ## Cleanup
 
