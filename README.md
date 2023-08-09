@@ -134,6 +134,15 @@ robusta playbooks trigger prometheus_alert alert_name=KubePodCrashLooping namesp
 
 An alert will arrive in Slack with a button. Click the button to ask ChatGPT about the alert.
 
+
+## Cleanup
+
+When you want to remove Robusta from your cluster.
+
+```bash
+helm uninstall robusta robusta/robusta 
+```
+
 ## Sources
 
 [Robusta Docs](https://docs.robusta.dev/master/)
