@@ -6,7 +6,8 @@ Kubernetes can be complex, why go it alone when you can use the OpenAI LLM to he
 
 In order to be successful in this project you will need to make sure you have a few things set up and installed beforhand. The set up for most of these components is outside of the scope of this project.
 
-NOTE: MacOS was used to set up a test dev environment, Homebrew was used to set up the environemnt. Install [HomeBrew](https://brew.sh)
+**NOTE:** MacOS was used to set up a test dev environment, Homebrew was used to set up the environemnt. Install [HomeBrew](https://brew.sh)
+
 
 **Slack** - If you do not already have a channel set up for your Kubernetes troubleshooting, create one before you start. 
 
@@ -55,7 +56,7 @@ brew install helm
 
 The Robusta install is all Helm based. Robusta can be used in an environment where Prometheus is already in use, or Prometheus can be deployed with Robusta.
 
-NOTE: This demo uses Robusta to install Prometheus.
+**NOTE:** This demo uses Robusta to install Prometheus.
 
 Install the Python based Robusta CLI.
 
@@ -96,7 +97,7 @@ robusta-runner                            ClusterIP   10.109.16.144    <none>   
 
 Expose Robusta Grafana dashboards
 
-NOTE: We are using port 3000, change the port to fit your environment
+**NOTE:** We are using port 3000, change the port to fit your environment
 
 ```bash
 kubectl -n default port-forward svc/robusta-grafana 3000:80
