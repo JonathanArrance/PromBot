@@ -77,6 +77,31 @@ helm repo add robusta https://robusta-charts.storage.googleapis.com
 helm install robusta robusta/robusta -f ./generated_values.yaml --set clusterName=PromBot
 ```
 
+Check to see if the Robusta components are running
+
+```bash
+kubectl get svc
+
+NAME                                      TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+prometheus-operated                       ClusterIP   None             <none>        9090/TCP                     51m
+robusta-grafana                           ClusterIP   10.109.88.8      <none>        80/TCP                       51m
+robusta-kube-prometheus-st-alertmanager   ClusterIP   10.110.61.226    <none>        9093/TCP                     51m
+robusta-kube-prometheus-st-operator       ClusterIP   10.98.86.189     <none>        443/TCP                      51m
+robusta-kube-prometheus-st-prometheus     ClusterIP   10.109.214.172   <none>        9090/TCP                     51m
+robusta-kube-state-metrics                ClusterIP   10.108.233.213   <none>        8080/TCP                     51m
+robusta-prometheus-node-exporter          ClusterIP   10.109.147.8     <none>        9104/TCP                     51m
+robusta-runner                            ClusterIP   10.109.16.144    <none>        80/TCP                       51m
+
+```
+
+Expose Robusta Grafana dashboards
+
+NOTE: We are using port 3000, change the port to fit your environment
+
+```bash
+kubectl -n default port-forward svc/robusta-grafana 3000:80
+```
+
 ## Add the OpenAI Plugin AKA ChatGPT
 
 ### Robusta ChatGPT integration
