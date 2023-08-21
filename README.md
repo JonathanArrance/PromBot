@@ -168,12 +168,14 @@ An alert will arrive in Slack with a button. Click the button to ask ChatGPT abo
 kubectl delete deployment crashpod
 ```
 
-## Cleanup
+## Cleanup the dev testbed
 
 When you want to remove Robusta from your cluster.
 
 ```bash
 helm uninstall robusta robusta/robusta
+
+minikube stop
 ```
 
 ## Sources
