@@ -106,6 +106,8 @@ Expose Robusta Grafana dashboards
 kubectl -n default port-forward svc/robusta-grafana 3000:80
 ```
 
+Local Grafana [dashboards](http://127.0.0.1:3000/dashboards)
+
 
 ## Add the OpenAI Plugin AKA ChatGPT
 
