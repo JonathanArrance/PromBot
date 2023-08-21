@@ -1,12 +1,11 @@
 #!/bin/zsh
 
+#Simple script to deploy the demo.
+
 minikube start
 
 wait $!
 minikube addons enable ingress
-
-wait $!
-minikube addon enable metrics-server
 
 wait $!
 minikube addon enable metrics-server
@@ -29,5 +28,5 @@ kubectl get svc | grep robusta
 
 wait $1
 
-echo "Enable 
+echo "Enable the internal Grafana dashboards"
 kubectl -n default port-forward svc/robusta-grafana 3000:80&

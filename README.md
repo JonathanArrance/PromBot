@@ -70,6 +70,10 @@ We will need to create a the Robusta "Generated Values" file using the cli. This
 robusta gen-config --enable-prometheus-stack
 ```
 
+Answer the prompts and a file called generated_values.yaml is created.
+
+**NOTE:** At this point the OpenAI plugin is not added to the generated yaml config. 
+
 Set up the Helm chart and deploy Robusta in your Minikube environment.
 
 ```bash
@@ -101,6 +105,12 @@ Expose Robusta Grafana dashboards
 
 ```bash
 kubectl -n default port-forward svc/robusta-grafana 3000:80
+```
+
+Make sure the Robusta services are running.
+
+```bash
+kubectl get svc | grep robusta
 ```
 
 ## Add the OpenAI Plugin AKA ChatGPT
