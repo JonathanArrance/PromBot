@@ -8,7 +8,7 @@ wait $!
 minikube addons enable ingress
 
 wait $!
-minikube addon enable metrics-server
+minikube addons enable metrics-server
 
 wait $!
 helm repo add robusta https://robusta-charts.storage.googleapis.com
@@ -23,7 +23,7 @@ kubectl get pods -A
 
 wait $!
 
-echo "Get the Robusta services, make sure they are up/"
+echo "Get the Robusta services, make sure they are up"
 kubectl get svc | grep robusta
 
 wait $1

@@ -96,7 +96,6 @@ robusta-kube-prometheus-st-prometheus     ClusterIP   10.109.214.172   <none>   
 robusta-kube-state-metrics                ClusterIP   10.108.233.213   <none>        8080/TCP                     51m
 robusta-prometheus-node-exporter          ClusterIP   10.109.147.8     <none>        9104/TCP                     51m
 robusta-runner                            ClusterIP   10.109.16.144    <none>        80/TCP                       51m
-
 ```
 
 Expose Robusta Grafana dashboards
@@ -107,11 +106,6 @@ Expose Robusta Grafana dashboards
 kubectl -n default port-forward svc/robusta-grafana 3000:80
 ```
 
-Make sure the Robusta services are running.
-
-```bash
-kubectl get svc | grep robusta
-```
 
 ## Add the OpenAI Plugin AKA ChatGPT
 
