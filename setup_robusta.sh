@@ -18,10 +18,13 @@ wait $!
 helm install robusta robusta/robusta -f ../generated_values.yaml --set clusterName=PromBot
 
 wait $!
+sleep 5
+
 echo "Get the pods see if everyting is up."
 kubectl get pods -A
 
 wait $!
+sleep 5
 
 echo "Get the Robusta services, make sure they are up"
 kubectl get svc | grep robusta
